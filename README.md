@@ -8,8 +8,8 @@ Java master 1 DVL, Projet Java
 1. Demander de saisir un nombre entier sur la console compris entre 5 et 12 inclusivement.
 2. Lire le nombre et valider que c’est un entier et dans les bornes 5...12. Si ce n’est pas le cas alors indiquer l’erreur à l’utilisateur et demander d’entrer un nouveau nombre.
 3. Créez un tableau de chaîne de caractères. La taille du tableau sera la valeur saisie précédemment par l’utilisateur.
-5. Afficher proprement le contenu du tableau à la console
 4. Valoriser chaque élément du tableau avec le nom du mois de l’année en commençant par janvier.
+5. Afficher proprement le contenu du tableau à la console
 6. Convertir le tableau en collection.
 7. Trier votre liste par ordre alphabétique.
 8. Afficher proprement le contenu de la liste à la console
