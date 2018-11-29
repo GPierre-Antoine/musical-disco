@@ -19,30 +19,26 @@ public class Launcher {
         printMonthArray(monthes);
 
         // on convertit le tableau brut précédemment créé en objet implémentant Collection<T>, en l'occurence via List<T>
-        List<String> monthList = convertArrayToCollection(monthes);
-
-        // on range la collection
-        sortMonthesCollection(monthList);
+        Collection<String> monthList = convertArrayToSortedCollection(monthes);
 
         // on affiche la collection
         printMonthCollection(monthList);
     }
 
-    private static void printMonthCollection(List<String> monthList) {
+    private static void printMonthCollection(Collection<String> monthList) {
         StringBuilder builder = new StringBuilder("La collection contient les éléments suivants :");
         buildStringFromCollection(monthList, builder);
         System.out.println(builder.append("\n").toString());
     }
 
-    private static void sortMonthesCollection(List<String> monthList) {
+    private static Collection<String> convertArrayToSortedCollection(String[] monthes) {
+        // on convertit le tableau en List
+        List<String> strings = Arrays.asList(monthes);
         // Plusieurs implémentations auraient été possibles, via par exemple un comparator
         // par exemple en passant par une lambda implicite en faisant référence à une fonction fonction  :
-        // monthList.sort(String::compareTo);
-        Collections.sort(monthList);
-    }
-
-    private static List<String> convertArrayToCollection(String[] monthes) {
-        return Arrays.asList(monthes);
+        //Collections.sort(monthList);
+        strings.sort(String::compareTo);
+        return strings;
     }
 
     private static void printMonthArray(String[] monthes) {
