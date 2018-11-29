@@ -35,7 +35,7 @@ public class Launcher {
         // on convertit le tableau en List
         List<String> strings = Arrays.asList(monthes);
         // Plusieurs implémentations auraient été possibles, via par exemple un comparator
-        // par exemple en passant par une lambda implicite en faisant référence à une fonction fonction  :
+        // par exemple en passant par la fonction statique :
         //Collections.sort(monthList);
         strings.sort(String::compareTo);
         return strings;
