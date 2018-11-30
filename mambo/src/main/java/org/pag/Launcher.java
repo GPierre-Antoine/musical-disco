@@ -111,16 +111,24 @@ public class Launcher {
         Scanner scanner = new Scanner(file);
 
         int size;
-        do {
 
-            // on affiche la requête à l'utilisateur
-            System.out.println("Entrez un entier entre " + minSize + " et " + maxSize);
+        // on affiche la requête à l'utilisateur
+        System.out.println("Entrez un entier entre " + minSize + " et " + maxSize);
+
+
+        String error = "Erreur : le nombre saisi doit-être compris entre " + minSize + " et " + maxSize;
+
+        // on lit un entier
+        size = readInteger(scanner);
+        while (size < minSize || size > maxSize) {
+
+            // on affiche la requête à l'utilisateur dans le flux d'erreur
+            System.err.println(error);
 
             // on lit un entier
             size = readInteger(scanner);
-
             // si l'entier n'est pas compris entre min et max-sizes, on recommence.
-        } while (size < minSize || size > maxSize);
+        }
 
         // on retourne l'entier ainsi généré
         return size;
