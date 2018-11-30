@@ -1,0 +1,24 @@
+#!/bin/bash
+
+set -euo pipefail
+
+if test "$#" -lt 1;
+then
+	echo "Erreur : Usage $0 <Nom Archive>" >> /dev/stderr
+	exit 1;
+fi
+
+nomArchive="$1"
+
+currentDirectory="$PWD"
+
+projectDirectory="$(dirname "$0")"
+cd $projectDirectory/../..
+
+if ! mvn package > /dev/null 2>&1
+then
+    echo "Une erreur de compilation est survenue" >> /dev/stderr
+    exit 2
+fi
+
+zip -r "$currentDirectory/$nomArchive" src/* pom.xml
